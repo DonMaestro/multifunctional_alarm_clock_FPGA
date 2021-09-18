@@ -1,8 +1,10 @@
 
 
 
-**.out
-**.a
-**.vcd
+**/*.out
+**/*.a
+**/*.vcd
 
+**/display.out
+Debug/*
 

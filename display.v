@@ -6,7 +6,7 @@
 //
 
 
-module display #(SIZE=4) (input i_clk, i_rst_n,
+module display #(parameter SIZE=4) (input i_clk, i_rst_n,
 		input [10:0] i_comm,
 		input [(SIZE<<3)-1:0] i_data,
 //		input [7:0] i_data0,
