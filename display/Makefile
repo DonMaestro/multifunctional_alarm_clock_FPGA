@@ -1,5 +1,5 @@
 
-SOURCES=tb_display.v display.v
+SOURCES=tb_display.v display.v rom.v
 SOURCES_DIR= -y Components
 OUTPUT_DIR=Debug/
 OUTPUT_NAME=display.out

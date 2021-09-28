@@ -1,0 +1,164 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/maestro/Documents/KPI/7semestr/SAPR/project/display
+Xbase_sv_unit
+Z1 !s115 display_bus
+Z2 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1632771605
+VIbJCOkYk@=JoU:QDX>:ej3
+r1
+!s85 0
+!i10b 1
+!s100 Oi`0TajHc9P=AXXVQKI=Z0
+IIbJCOkYk@=JoU:QDX>:ej3
+!i103 1
+S1
+R0
+w1632771327
+8Tests/base.sv
+Z3 FTests/base.sv
+Z4 FTests/intrf.sv
+!i122 175
+Z5 L0 1 0
+Z6 OV;L;2020.1;71
+31
+!s108 1632771605.000000
+!s107 Tests/intrf.sv|tb_display.sv|Tests/testing_block.sv|Tests/base.sv|
+!s90 -sv|Tests/base.sv|Tests/testing_block.sv|tb_display.sv|
+!i113 1
+o-sv
+Z7 tCvgOpt 0
+Xbase_v_unit
+R1
+R2
+!s110 1632673232
+VG0WkRiUBVJ7j`jUMOXGjJ0
+r1
+!s85 0
+!i10b 1
+!s100 V?gQXQMnV[Z74Z?kfHFV31
+IG0WkRiUBVJ7j`jUMOXGjJ0
+!i103 1
+S1
+R0
+w1632672873
+8Tests/base.v
+FTests/base.v
+!i122 32
+L0 24 0
+R6
+31
+!s108 1632673232.000000
+!s107 tb_display_sv.v|Tests/testing_block.v|Tests/base.v|
+!s90 -sv|Tests/base.v|Tests/testing_block.v|tb_display_sv.v|
+!i113 1
+o-sv
+R7
+Ydisplay_bus
+Z8 !s105 tb_display_sv_unit
+Z9 DXx4 work 18 tb_display_sv_unit 0 22 P[eD^M<5UFdTDjM_`DbEQ1
+R2
+!s110 1632853177
+!i10b 1
+!s100 JVC_YhjL9nHbmj?m5PK]P0
+Z10 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I]AzWE];7SiQ4XK47@[i?H0
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1632742627
+8Tests/intrf.sv
+R4
+!i122 215
+R5
+R6
+r1
+!s85 0
+31
+Z12 !s108 1632853177.000000
+!s107 Tests/intrf.sv|Tests/base.sv|tb_display.sv|
+Z13 !s90 -sv|tb_display.sv|
+!i113 1
+o-sv
+R7
+vtb_display
+R2
+R9
+!i10b 1
+!s100 <65=Y]k`h1ZUP2zm962<E3
+IMK]fe4cma2=T>n>?i;:f53
+R11
+R8
+S1
+R0
+w1632773697
+Z14 8tb_display.sv
+Z15 Ftb_display.sv
+!i122 215
+L0 4 40
+R6
+31
+R12
+Z16 !s107 Tests/intrf.sv|Tests/base.sv|tb_display.sv|
+R13
+!i113 1
+o-sv
+R7
+Xtb_display_sv_unit
+R1
+R2
+!i10b 1
+!s100 H?1PgAU3]n?2bmkbg`2Y`0
+IP[eD^M<5UFdTDjM_`DbEQ1
+VP[eD^M<5UFdTDjM_`DbEQ1
+!i103 1
+S1
+R0
+w1632853176
+R14
+R15
+R3
+R4
+!i122 215
+R5
+R6
+31
+R12
+R16
+R13
+!i113 1
+o-sv
+R7
+vtesting_block
+R2
+!s110 1632771635
+!i10b 1
+!s100 69oBd0@_eXkGb=7=jBd`W0
+R10
+IW4HN]_YE=j4f1:S65j]EP0
+R11
+S1
+R0
+w1632592669
+8Tests/testing_block.sv
+FTests/testing_block.sv
+!i122 177
+L0 3 6
+R6
+r1
+!s85 0
+31
+!s108 1632771635.000000
+!s107 Tests/intrf.sv|Tests/base.sv|tb_display.sv|Tests/testing_block.sv|
+!s90 -sv|Tests/testing_block.sv|tb_display.sv|
+!i113 1
+o-sv
+R7

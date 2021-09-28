@@ -1,0 +1,14 @@
+// init Display
+00000000000 // Empty instruction
+00000111000 // Function set
+00000111000 // Function set
+00000001100 // Display on
+00000000001 // Clear Display
+00000000100 // Entry mode set
+// first page
+10000000000
+10000000001
+00000000011
+00000001100
+
+

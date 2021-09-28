@@ -1,12 +1,15 @@
 //
 //
+//	OUTPUT
+//	[---08---][09][10][11]
+//	DATA[7:0], RW, RS, E
 //	SIZE multiple 4
 //
 //	interfase --> reg --> combination logic --> reg --> output
-//
+//	CLK = 25MHz
 
 
-module display #(parameter SIZE=4) (input i_clk, i_rst_n,
+module display #(parameter SIZE=4, WIDTH_MEM_MAX=4) (input i_clk, i_rst_n,
 		input [10:0] i_comm,
 		input [(SIZE<<3)-1:0] i_data,
 //		input [7:0] i_data0,
@@ -14,6 +17,7 @@ module display #(parameter SIZE=4) (input i_clk, i_rst_n,
 //		input [7:0] i_data2,
 //		input [7:0] i_data3,
 		output [7:0] o_data,
+		output [WIDTH_MEM_MAX-1:0] o_addr,
 		output o_E, o_RS, o_RW);
 
 
@@ -36,7 +40,18 @@ wire	[SIZE-1:0] o_decoder;
 //assign byte[2] = i_data2;
 //assign byte[3] = i_data3;
 
-//control ();
+
+
+
+
+control #(.WIDTH_MEM(WIDTH_MEM_MAX)) m_control (.i_clk(i_clk),
+		.i_rst_n(i_rst_n),
+		.i_command(i_comm),
+		.i_addr_begin(4'd6),
+		.i_addr_end(4'd9),
+		.o_addr(o_addr),
+		.o_overflow(),
+		.o_E(o_E));
 
 
 
@@ -61,6 +76,7 @@ endgenerate
 
 register #(11) m_reg_comm(.i_clk(i_clk),
 		.i_rst_n(i_rst_n),
+		.i_en(1'b1),
 		.i_D(i_comm),
 		.o_Q(command));
 
@@ -69,6 +85,7 @@ generate
 	begin
 		register m_reg_data(.i_clk(i_clk),
 				.i_rst_n(i_rst_n),
+				.i_en(1'b1),
 				.i_D(byte[i]),
 				.o_Q(data[i]));
 	end
@@ -76,7 +93,7 @@ endgenerate
 
 
 //
-// combinating logic
+// Block combinating logic
 //
 
 
@@ -137,19 +154,21 @@ endgenerate
 
 register m_reg_o_data(.i_clk(i_clk),
 		.i_rst_n(i_rst_n),
+		.i_en(1'b1),
 		.i_D(mux),
 		.o_Q(o_data));
 
-register #(1) m_reg_o_rs(.i_clk(i_clk),
-		.i_rst_n(i_rst_n),
-		.i_D(command[8]),
-		.o_Q(o_RS));
-
 register #(1) m_reg_o_rw(.i_clk(i_clk),
 		.i_rst_n(i_rst_n),
-		.i_D(command[9]),
+		.i_en(1'b1),
+		.i_D(command[8]),
 		.o_Q(o_RW));
 
-assign o_E = i_clk;
+register #(1) m_reg_o_rs(.i_clk(i_clk),
+		.i_rst_n(i_rst_n),
+		.i_en(1'b1),
+		.i_D(command[9]),
+		.o_Q(o_RS));
+
 
 endmodule

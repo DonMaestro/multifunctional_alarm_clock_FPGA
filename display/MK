@@ -1,0 +1,17 @@
+
+
+SOURCE=tb_display.sv
+
+
+all: 
+
+
+compile: 
+	vlog -sv $(SOURCE)
+
+
+wave: compile
+	vsim tb_display
+#	vvp $(OUTPUT_DIR)$(OUTPUT_NAME)
+#	gtkwave $(OUTPUT_DIR)$(OUTPUT_WAVE)
+	
