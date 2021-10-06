@@ -15,6 +15,10 @@ wire [WIDTH-1:0] counter;
 wire [WIDTH-1:0] mux;
 wire new_addr;
 
+/*
+ * input registers
+ *
+ */
 
 register #(WIDTH) m_reg_addr_begin(.i_clk(i_clk),
 		.i_rst_n(i_rst_n),
@@ -30,7 +34,7 @@ register #(.WIDTH(WIDTH), .RST_DATA(RST_ADDR_END)) m_reg_addr_end(.i_clk(i_clk),
 		.o_Q(addr_end));
 
 
-
+//counter 
 assign adder = mux + 1'b1;
 
 
@@ -60,13 +64,6 @@ register #(1) m_reg_mux_s0(.i_clk(i_clk),
 // formation of output
 //
 
-/*
-register #(1) m_reg_(.i_clk(i_clk),
-		.i_rst_n(i_rst_n),
-		.i_en(1'b1),
-		.i_D(overflow),
-		.o_Q(o_overflow));
-*/
 assign o_overflow = overflow;
 
 register #(WIDTH) m_reg_o_addr(.i_clk(i_clk),
