@@ -16,8 +16,9 @@ module display #(parameter SIZE=4, WIDTH_MEM_MAX=4, CLOCK=2614) (input i_clk, i_
 		input [10:0] i_command,
 		input [((SIZE-1)<<3)-1:0] i_data,
 		input [WIDTH_MEM_MAX-1:0] i_addr_begin, i_addr_end,
-		output [7:0] o_data,
+		output o_overflow,
 		output [WIDTH_MEM_MAX-1:0] o_addr,
+		output [7:0] o_data,
 		output o_E, o_RS, o_RW);
 
 
@@ -45,7 +46,7 @@ control #(.WIDTH_MEM(WIDTH_MEM_MAX), .CLOCK(CLOCK)) m_control (.i_clk(i_clk),
 		.i_addr_end(4'd9),
 		.o_addr(o_addr),
 		.o_enable(enable),
-		.o_overflow(),
+		.o_overflow(o_overflow),
 		.o_E(o_E));
 
 

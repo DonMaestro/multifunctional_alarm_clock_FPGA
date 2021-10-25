@@ -1,8 +1,8 @@
-`timescale 1 ns / 10 ps
+`timescale 1 us / 100 ns
 
 module tb_display;
 
-parameter SIZE=4, WIDTHADDR=4, CLOCK=2614;
+parameter SIZE=4, WIDTHADDR=4, CLOCK=25000;
 
 reg clk, rst_n;
 
@@ -43,6 +43,8 @@ display #(.SIZE(SIZE), .WIDTH_MEM_MAX(WIDTHADDR), .CLOCK(CLOCK)) m_display(.i_cl
 
 initial
 begin
+	data[2] = 8'b0;
+	data[3] = 8'b0;
 	data[0] = 8'hff;
 	data[1] = 8'h0f;
 	#60
@@ -68,7 +70,7 @@ initial
 begin
 	$dumpfile("Debug/display.vcd");
 	$dumpvars;
-	#1000 $finish;
+	#10000 $finish;
 end
 
 

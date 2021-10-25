@@ -11,11 +11,11 @@ module control #(parameter CLOCK=2614, WIDTH_MEM=4) (input i_clk, i_rst_n,
 localparam CLEAR_DISPLAY = 11'b00000000001;
 localparam RETURN_HOME = 11'b00000000010;
 
-localparam WAIT_TACT = $clog2(CLOCK * 0.00153);
+localparam WAIT_TACT = CLOCK * 0.00153;
 localparam WIDTH_COUNT = $clog2(WAIT_TACT);
 
 reg [WIDTH_COUNT-1:0] counter;
-supply1 [WIDTH_COUNT-1:0] set_counter;
+reg [WIDTH_COUNT-1:0] set_counter = WAIT_TACT;
 
 wire [10:0] command;
 
