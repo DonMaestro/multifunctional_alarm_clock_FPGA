@@ -11,7 +11,7 @@ module control #(parameter CLOCK=2614, WIDTH_MEM=4) (input i_clk, i_rst_n,
 localparam CLEAR_DISPLAY = 11'b00000000001;
 localparam RETURN_HOME = 11'b00000000010;
 
-localparam WAIT_TACT = CLOCK * 0.00153;
+localparam integer WAIT_TACT = CLOCK * 0.00153;
 localparam WIDTH_COUNT = $clog2(WAIT_TACT);
 
 reg [WIDTH_COUNT-1:0] counter;
